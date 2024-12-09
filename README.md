@@ -45,7 +45,7 @@ class="center">
 Gated DeltaNet also achieves favorable perplexity scores on long-context benchmarks:
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/64c307f4-3b30-4899-ab17-6507e6506c51" width=62% height=62% 
+<img src="https://github.com/user-attachments/assets/64c307f4-3b30-4899-ab17-6507e6506c51" width=72% height=72% 
 class="center">
 </p>
 
