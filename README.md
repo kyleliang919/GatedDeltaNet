@@ -8,10 +8,17 @@ Official PyTorch implementation of Gated Delta Networks: Improving Mamba2 with D
 
 
 Gated DeltaNet is a novel LLM architecture that advances the capabilities of linear transformers. We introduce gated delta rule which effectively combines memory clearing with precise and targeted updates in a hardware-efficient implementation.
-
+![img1](https://github.com/user-attachments/assets/70f96a7e-e51d-4514-a429-2ae30c52afbb)
 
 
 Gated DeltaNet demonstrates a strong performance on various LLM benchmarks such as common-sense reasoning and recall. It also achieves favorable training throughput compared to competeting models such as Mamba2 and Samba. 
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/b5c96369-a998-442b-ad7c-2f9fb6979b44" width=62% height=62% 
+class="center">
+</p>
+
+
 
 ### Training
 
