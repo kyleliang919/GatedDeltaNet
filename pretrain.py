@@ -241,23 +241,25 @@ def train(args, fabric, state, train_dataloader, val_dataloader, monitor, resume
 
 
 @torch.no_grad()
-def validate(args, fabric: L.Fabric, model: torch.nn.Module, val_dataloader: DataLoader, eval_iters=100) -> torch.Tensor:
-    if fabric.global_rank == 0:
-        fabric.print("Validating ...")
+def validate(args, fabric: L.Fabric, model: torch.nn.Module, val_dataloader: DataLoader, eval_iters=10) -> torch.Tensor:
+    fabric.print("Validating ...")
     model.eval()
-    losses = torch.zeros(args.num_extrapol, device=fabric.device, dtype=torch.float64)
-    num_sample = 0
+
+    losses = torch.zeros(eval_iters, args.num_extrapol, device=fabric.device)
     for k, val_data in enumerate(val_dataloader):
-        num_sample += 1       
-        for i, length in enumerate([4096, 8192, 12288, 16384]):   #[2048, 4096, 8192, 16384]
+        if k >= eval_iters:
+            break
+        
+        for i, length in enumerate([2048, 4096]):
             input_ids = val_data[:, 0 : length].contiguous()
             targets = val_data[:, 1 : length + 1].contiguous()
             logits = model(input_ids)
             loss = chunked_cross_entropy(logits, targets, chunk_size=0)
-            losses[i] += (loss.item() - losses[i]) / num_sample
-    fabric.print(f"Validation loss: {losses}")
+            losses[k,i] = loss.item()
+        
+    out = losses.mean(0)
     model.train()
-    return losses
+    return out
 
 
 def create_dataloader(
@@ -365,12 +367,12 @@ if __name__ == "__main__":
     group.add_argument('--tokenizer_name', type=str, default='TinyLlama/TinyLlama_v1.1')
     group.add_argument('--learning_rate', type=float, default=4e-4, help='learning rate')
     group.add_argument('--total_evals', type=int, default=400, help='total number of evals')
-    group.add_argument('--eval_iters', type=int, default=15, help='number of evaluation iterations')
+    group.add_argument('--eval_iters', type=int, default=10, help='number of evaluation iterations')
     group.add_argument('--log_step_interval', type=int, default=10, help='log_step_interval')
     group.add_argument('--save_step_interval', type=int, default=1000, help='save_step_interval')
     group.add_argument('--eval_step_interval', type=int, default=1000, help='eval_step_interval')
     group.add_argument('--seed', type=int, default=3407, help='seed')
-    group.add_argument('--num_extrapol', type=int, default=4, help='num_extrapol')
+    group.add_argument('--num_extrapol', type=int, default=2, help='num_extrapol')
     group.add_argument('--weight_decay', type=float, default=1e-1, help='weight decay')
     group.add_argument('--beta1', type=float, default=0.9, help='beta1')
     group.add_argument('--beta2', type=float, default=0.95, help='beta2')
