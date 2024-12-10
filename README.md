@@ -1,10 +1,8 @@
-# 🔮 Gated Delta Networks: Improving Mamba2 with Delta Rule
+# Gated Delta Networks: Improving Mamba2 with Delta Rule
 
-Official PyTorch implementation of Gated Delta Networks: Improving Mamba2 with Delta Rule.
+Official PyTorch implementation of Gated Delta Networks: [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1).
 
-[![PyTorch](https://img.shields.io/badge/PyTorch-ee4c2c?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![License](https://img.shields.io/badge/license-NVIDIA%20Source%20Code%20License--NC-green.svg)](LICENSE)
-[![arXiv](https://img.shields.io/badge/arXiv-2312.XXXXX-b31b1b.svg)](https://arxiv.org)
+[![Star on GitHub](https://img.shields.io/github/stars/NVlabs/GatedDeltaNet.svg?style=social)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
 
 [Songlin Yang](https://sustcsonglin.github.io/),
 [Jan Kautz](https://jankautz.com/) and
@@ -13,7 +11,7 @@ Official PyTorch implementation of Gated Delta Networks: Improving Mamba2 with D
 
 ## 🌟 Why Gated DeltaNet?
 
-Gated DeltaNet introduces a groundbreaking approach to linear transformers by combining:
+Gated DeltaNet introduces a novel approach to linear transformers by combining:
 - 🧠 **Smart Memory Management**: Intelligent memory management that knows what to keep and what to forget
 - ⚡ **Precise Updates**: Targeted memory updates that enhance model efficiency
 - 💻 **Hardware Efficiency**: Optimized implementation for real-world deployment
@@ -73,8 +71,12 @@ python ../pretrain.py \
 --learning_rate ${LR} \
 --micro_batch_size ${MICRO_BATCH_SIZE}
 ```
-
 💡 **Pro Tip**: Add `--interactive_job --debug` for interactive debugging sessions!
+
+Please see this slurm [script](https://github.com/NVlabs/GatedDeltaNet/blob/main/scripts/tsz512x4k_15B_gated_deltanet_h1_0.4B.sh) for training the GatedDeltaNet_H1 model with 0.4B parameters on 15B tokens. The training requires 4 nodes and can be finished in approximately 4 hours. For this run, the validation loss and perplexitty curves (1x & 2x for lengh extrapolation) are expected as follows:
+
+![curves](https://github.com/user-attachments/assets/bd8afd42-6f20-4103-8b31-48516871b681)
+
 
 ## 📜 License
 
