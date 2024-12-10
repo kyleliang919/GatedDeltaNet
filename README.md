@@ -14,7 +14,7 @@ Official PyTorch implementation of Gated Delta Networks: Improving Mamba2 with D
 ## 🌟 Why Gated DeltaNet?
 
 Gated DeltaNet introduces a groundbreaking approach to linear transformers by combining:
-- 🧠 **Smart Memory Clearing**: Intelligent memory management that knows what to keep and what to forget
+- 🧠 **Smart Memory Management**: Intelligent memory management that knows what to keep and what to forget
 - ⚡ **Precise Updates**: Targeted memory updates that enhance model efficiency
 - 💻 **Hardware Efficiency**: Optimized implementation for real-world deployment
   
