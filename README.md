@@ -1,6 +1,8 @@
 # Gated Delta Networks: Improving Mamba2 with Delta Rule
 
-Official PyTorch implementation of Gated Delta Networks: [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1).
+![nvidia-deltanet-badge](https://github.com/user-attachments/assets/35b89293-29e9-4560-864d-45f702a5ddf7)
+
+Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1).
 
 [![Star on GitHub](https://img.shields.io/github/stars/NVlabs/GatedDeltaNet.svg?style=social)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
 
@@ -8,6 +10,18 @@ Official PyTorch implementation of Gated Delta Networks: [**Gated Delta Networks
 [Jan Kautz](https://jankautz.com/) and
 [Ali Hatamizadeh](https://research.nvidia.com/person/ali-hatamizadeh). 
 
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32">
+  <!-- Background rectangle -->
+  <rect width="180" height="32" rx="6" fill="#1a1a1a"/>
+  
+  <!-- NVIDIA logo style -->
+  <text x="10" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#76B900"></text>
+  
+  <!-- Divider -->
+  <line x1="70" y1="8" x2="70" y2="24" stroke="#333" stroke-width="1"/>
+  
+</svg>
 
 ## 🌟 Why Gated DeltaNet?
 
