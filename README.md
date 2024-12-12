@@ -10,6 +10,9 @@ Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 wit
 [Jan Kautz](https://jankautz.com/) and
 [Ali Hatamizadeh](https://research.nvidia.com/person/ali-hatamizadeh). 
 
+For business inquiries, please visit our website and submit the form: [NVIDIA Research Licensing](https://www.nvidia.com/en-us/research/inquiries/)
+
+
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32">
   <!-- Background rectangle -->
