@@ -116,6 +116,19 @@ If you find this work useful, please consider:
 
 Join us in pushing the boundaries of linear transformers! 🚀
 
+## Citation
+
+If you find Gated DeltaNet to be useful for your work, please consider citing our paper: 
+
+```
+@article{yang2024gated,
+  title={Gated Delta Networks: Improving Mamba2 with Delta Rule},
+  author={Yang, Songlin and Kautz, Jan and Hatamizadeh, Ali},
+  journal={arXiv preprint arXiv:2412.06464},
+  year={2024}
+}
+```
+
 ## Star History
 
 [![Stargazers repo roster for @NVlabs/GatedDeltaNet](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=NVlabs&repo=GatedDeltaNet)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
