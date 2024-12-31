@@ -327,7 +327,7 @@ def bwd_prepare_wy_repr_dk_dbeta_dg(
     b_dg_exp = b_dAu * b_Aw 
     b_dg_exp = tl.where(tl.arange(0, BT)[:, None] >= tl.arange(0, BT)[None, :], b_dg_exp, 0)
     b_dg = tl.sum(b_dg_exp, axis=1) - tl.sum(b_dg_exp, axis=0)
-    p_dg = tl.make_block_ptr(dg + i_bh * T, (T,), (1,), (i_t * BT,), (BT,), (0))
+    p_dg = tl.make_block_ptr(dg + i_bh * T, (T,), (1,), (i_t * BT,), (BT,), (0,))
     tl.store(p_dg, b_dg, boundary_check=(0,))
     p_beta = tl.make_block_ptr(beta + i_bh * T, (T,), (1,), (i_t * BT,), (BT,), (0,))   
     b_beta = tl.load(p_beta, boundary_check=(0,))
