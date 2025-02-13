@@ -2,7 +2,7 @@
 
 ![nvidia-deltanet-badge](https://github.com/user-attachments/assets/35b89293-29e9-4560-864d-45f702a5ddf7)
 
-Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1).
+Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1). 
 
 [![Star on GitHub](https://img.shields.io/github/stars/NVlabs/GatedDeltaNet.svg?style=social)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
 
@@ -12,7 +12,7 @@ Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 wit
 
 For business inquiries, please visit our website and submit the form: [NVIDIA Research Licensing](https://www.nvidia.com/en-us/research/inquiries/)
 
-
+For additional functionalities, such as varlen training and inference support, see [FLA implementation](https://github.com/fla-org/flash-linear-attention/tree/main/fla/models/gated_deltanet).
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32">
   <!-- Background rectangle -->
@@ -106,6 +106,8 @@ Licensed under the NVIDIA Source Code License-NC. See [LICENSE](LICENSE) for det
 Built on the shoulders of giants:
 - [Samba](https://github.com/microsoft/Samba)
 - [LiTGPT](https://github.com/Lightning-AI/litgpt)
+- [TinyLLaMa](https://github.com/jzhang38/TinyLlama)
+- [Flash Linear Attention](https://github.com/fla-org/flash-linear-attention)
 
 ## ⭐ Support Us
 
