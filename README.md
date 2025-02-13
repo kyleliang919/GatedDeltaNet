@@ -2,7 +2,7 @@
 
 ![nvidia-deltanet-badge](https://github.com/user-attachments/assets/35b89293-29e9-4560-864d-45f702a5ddf7)
 
-Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule**](https://arxiv.org/abs/2412.06464v1). 
+Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule (ICLR '25)**](https://arxiv.org/abs/2412.06464v1). 
 
 [![Star on GitHub](https://img.shields.io/github/stars/NVlabs/GatedDeltaNet.svg?style=social)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
 
@@ -66,7 +66,7 @@ class="center">
 
 
 ## 📢 Latest Updates
-
+- `01/22/2024`: 🔥 Gated DeltaNet has been accepted to ICLR '25.
 - `12/09/2024`: 🔥 **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
 
@@ -123,11 +123,12 @@ Join us in pushing the boundaries of linear transformers! 🚀
 If you find Gated DeltaNet to be useful for your work, please consider citing our paper: 
 
 ```
-@article{yang2024gated,
-  title={Gated Delta Networks: Improving Mamba2 with Delta Rule},
-  author={Yang, Songlin and Kautz, Jan and Hatamizadeh, Ali},
-  journal={arXiv preprint arXiv:2412.06464},
-  year={2024}
+@inproceedings{yang2025gated,
+title={Gated Delta Networks: Improving Mamba2 with Delta Rule},
+author={Songlin Yang and Jan Kautz and Ali Hatamizadeh},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=r8H7xhYPwz}
 }
 ```
 
