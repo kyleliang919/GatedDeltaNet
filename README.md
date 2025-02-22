@@ -26,6 +26,13 @@ For additional functionalities, such as varlen training and inference support, s
   
 </svg>
 
+## 📢 Latest Updates
+- `02/22/2024`: 🔥🔥 We have introduced new [kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/chunk.py) that significantly improve speed ! 
+- `02/22/2024`: 🔥 Gated DeltaNet is now avaiable in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
+- `01/22/2024`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
+- `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
+- Watch this space for more exciting updates!
+
 ## 🌟 Why Gated DeltaNet?
 
 Gated DeltaNet introduces a novel approach to linear transformers by combining:
@@ -64,13 +71,6 @@ Gated DeltaNet also achieves favorable perplexity scores on long-context benchma
 class="center">
 </p>
 
-
-## 📢 Latest Updates
-- `02/22/2024`: 🔥🔥 We have introduced new [kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/chunk.py) that significantly improve speed ! 
-- `02/22/2024`: 🔥 Gated DeltaNet is now avaiable in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
-- `01/22/2024`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
-- `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
-- Watch this space for more exciting updates!
 
 ## 🚀 Getting Started
 
