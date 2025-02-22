@@ -66,8 +66,10 @@ class="center">
 
 
 ## 📢 Latest Updates
-- `01/22/2024`: 🔥 Gated DeltaNet has been accepted to ICLR '25.
-- `12/09/2024`: 🔥 **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
+- `02/22/2024`: 🔥🔥 We have introduced new [kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/chunk.py) that significantly improve speed ! 
+- `02/22/2024`: 🔥 Gated DeltaNet is now avaiable in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
+- `01/22/2024`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
+- `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
 
 ## 🚀 Getting Started
