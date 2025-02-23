@@ -27,11 +27,66 @@ For additional functionalities, such as varlen training and inference support, s
 </svg>
 
 ## 📢 Latest Updates
-- `02/22/2024`: 🔥🔥 We have introduced new [kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/chunk.py) that significantly improve speed ! 
-- `02/22/2024`: 🔥 Gated DeltaNet is now avaiable in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
+- `02/23/2024`: 🔥🔥 Check out the optimized [Gated DeltaNet FLA kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/) with significantly faster speed.
+- `02/22/2024`: 🔥 Gated DeltaNet is available in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
 - `01/22/2024`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
 - `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
+
+
+## ❓ Frequently Asked Questions (FAQ)
+
+### 1️. Can I use Gated DeltaNet directly from FLA?
+
+Yes! You can directly import the Gated DeltaNet block from FLA. The following script shows how to do it from FLA or our repository:
+
+```py
+>>> USE_FLA = True
+>>> import torch
+>>> if USE_FLA:
+...     from fla.layers import GatedDeltaNet
+>>> else:
+...     from .gated_delta_net import GatedDeltaNet
+>>> 
+>>> bs, num_heads, seq_len, hidden_size = 16, 4, 2048, 512
+>>> gated_deltanet = GatedDeltaNet(hidden_size=hidden_size, num_heads=num_heads, mode='chunk').bfloat16().cuda()
+>>> gated_deltanet
+GatedDeltaNet(
+  (silu): SiLU()
+  (q_proj): Linear(in_features=512, out_features=1024, bias=False)
+  (k_proj): Linear(in_features=512, out_features=1024, bias=False)
+  (v_proj): Linear(in_features=512, out_features=2048, bias=False)
+  (b_proj): Linear(in_features=512, out_features=4, bias=False)
+  (a_proj): Linear(in_features=512, out_features=4, bias=False)
+  (q_conv1d): ShortConvolution(1024, 1024, kernel_size=(4,), stride=(1,), padding=(3,), groups=1024, bias=False, activation=silu)
+  (k_conv1d): ShortConvolution(1024, 1024, kernel_size=(4,), stride=(1,), padding=(3,), groups=1024, bias=False, activation=silu)
+  (v_conv1d): ShortConvolution(2048, 2048, kernel_size=(4,), stride=(1,), padding=(3,), groups=2048, bias=False, activation=silu)
+  (g_proj): Linear(in_features=512, out_features=2048, bias=False)
+  (o_norm): FusedRMSNormSwishGate(512, eps=1e-05)
+  (o_proj): Linear(in_features=2048, out_features=512, bias=False)
+)
+>>> x = torch.randn(bs, seq_len, hidden_size).bfloat16().cuda()
+>>> y, _, _ = gated_deltanet(x)
+>>> y.shape
+torch.Size([16, 2048, 512])
+```
+### 2. Is there a difference between FLA Gated DeltaNet kernels and NVLabs implementation ? 
+
+Yes ! FLA kernels are faster and also support varlen training. We recommend using FLA. 
+
+For reference, we also provide the FLA-based kernels in this repository. Please see the FLA-optimized Gated DeltaNet kernels [here](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/). 
+
+
+### 3. Do you plan to release the pretrained weights of your models ?
+
+No. We only provide our code implementations. 
+
+### 4. The dataloader in this repository is suitable for SlimPajama-672B. But the models are trained on FineWeb-Edu in your paper. What is the reason behind this and shall I expect similar results ? 
+
+For the pretraining part, we followed the original [Samba](https://github.com/microsoft/Samba) repository and provided the same SlimPajama-672B data loader for consistency. 
+
+Our experiments confirm that you should expect similar results and trends on SlimPajama-672B as shown in our paper.  
+
 
 ## 🌟 Why Gated DeltaNet?
 
