@@ -33,8 +33,6 @@ For additional functionalities, such as varlen training and inference support, s
 - `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
 
-Here’s a refined version with improved grammar, readability, and clarity:
-
 ---
 
 ## ❓ Frequently Asked Questions (FAQ)
@@ -92,7 +90,7 @@ No, we only provide code implementations.
 
 ### 4️⃣ The dataloader in this repository is designed for SlimPajama-672B, but your models were trained on FineWeb-Edu. Why is that, and should I expect similar results?
 
-For pretraining, we followed the original [Samba](https://github.com/microsoft/Samba) repository and included the **SlimPajama-672B** dataloader to maintain consistency.
+For the code release, we used the original [Samba](https://github.com/microsoft/Samba) repository and included the **SlimPajama-672B** dataloader to maintain consistency.
 
 Our experiments confirm that **SlimPajama-672B produces similar results and trends** to those reported in our paper. You can expect comparable performance.
 
