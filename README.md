@@ -33,12 +33,15 @@ For additional functionalities, such as varlen training and inference support, s
 - `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
 
+Here’s a refined version with improved grammar, readability, and clarity:
+
+---
 
 ## ❓ Frequently Asked Questions (FAQ)
 
-### 1️. Can I use Gated DeltaNet directly from FLA?
+### 1️⃣ Can I use Gated DeltaNet directly from FLA?
 
-Yes! You can directly import the Gated DeltaNet block from FLA. The following script shows how to do it from FLA or our repository:
+Yes! You can import the Gated DeltaNet block directly from FLA. The following script demonstrates how to do so using either FLA or our repository:
 
 ```py
 >>> USE_FLA = True
@@ -70,22 +73,31 @@ GatedDeltaNet(
 >>> y.shape
 torch.Size([16, 2048, 512])
 ```
-### 2. Is there a difference between FLA Gated DeltaNet kernels and NVLabs implementation ? 
 
-Yes ! FLA kernels are faster and also support varlen training. We recommend using FLA. 
+---
 
-For reference, we also provide the FLA-based kernels in this repository. Please see the FLA-optimized Gated DeltaNet kernels [here](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/). 
+### 2️⃣ What is the difference between the FLA Gated DeltaNet kernels and the NVLabs implementation?
 
+FLA kernels are **faster** and also support **variable-length (varlen) training**. We **strongly recommend** using FLA for better performance.
 
-### 3. Do you plan to release the pretrained weights of your models ?
+For reference, we also provide FLA-based kernels in this repository. You can find the optimized FLA Gated DeltaNet kernels [here](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/).
 
-No. We only provide our code implementations. 
+---
 
-### 4. The dataloader in this repository is suitable for SlimPajama-672B. But the models are trained on FineWeb-Edu in your paper. What is the reason behind this and shall I expect similar results ? 
+### 3️⃣ Will you release the pretrained model weights?
 
-For the pretraining part, we followed the original [Samba](https://github.com/microsoft/Samba) repository and provided the same SlimPajama-672B data loader for consistency. 
+No, we only provide code implementations. 
 
-Our experiments confirm that you should expect similar results and trends on SlimPajama-672B as shown in our paper.  
+---
+
+### 4️⃣ The dataloader in this repository is designed for SlimPajama-672B, but your models were trained on FineWeb-Edu. Why is that, and should I expect similar results?
+
+For pretraining, we followed the original [Samba](https://github.com/microsoft/Samba) repository and included the **SlimPajama-672B** dataloader to maintain consistency.
+
+Our experiments confirm that **SlimPajama-672B produces similar results and trends** to those reported in our paper. You can expect comparable performance.
+
+---
+
 
 
 ## 🌟 Why Gated DeltaNet?
