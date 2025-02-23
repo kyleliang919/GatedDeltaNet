@@ -164,7 +164,7 @@ Please see this slurm [script](https://github.com/NVlabs/GatedDeltaNet/blob/main
 
 ## 📜 License
 
-Copyright © 2024, NVIDIA Corporation. All rights reserved.
+Copyright © 2025, NVIDIA Corporation. All rights reserved.
 
 Licensed under the NVIDIA Source Code License-NC. See [LICENSE](LICENSE) for details.
 
