@@ -96,6 +96,21 @@ Our experiments confirm that **SlimPajama-672B produces similar results and tren
 
 ---
 
+### 5️⃣ Any guidance for evaluating the models?
+
+Since this codebase is primarily adapted from the [Samba codebase](https://github.com/microsoft/Samba), which is designed mainly for training, evaluation can be inconvenient. Notably, Samba codebase lacks generation utilities required for many generation-based evaluation tasks. 
+
+We recommend first converting your trained model weights to Hugging Face format provided in the [FLA repo](https://github.com/fla-org/flash-linear-attention). Once converted, you can leverage FLA for streamlined evaluation.
+
+- **For Single Needle in a Haystack (S-NIAH) tasks:**  
+  Please install [NVIDIA/RULER](https://github.com/NVIDIA/RULER/). The installation process can be challenging; we suggest installing any missing dependencies individually to ensure success. S-NIAH tasks are zero-shot tasks, and since RULER supports Hugging Face format models, you can easily evaluate your converted FLA models in this case.
+
+- **For zero-shot commonsense reasoning tasks (Table 3):**  
+  Follow the [FLA instructions](https://github.com/fla-org/flash-linear-attention/tree/main?tab=readme-ov-file#evaluations) for evaluation details.
+
+- **For zero-shot, in-context recall-intensive tasks (Table 4):**  
+  Use the official [evaluation script](https://github.com/HazyResearch/prefix-linear-attention/blob/main/lm-eval-harness/prompt_scripts/run_jrt_prompt_hf.sh) from their repository.  
+  ⚠️ **Important:** Avoid directly using `lm-eval-harness` with the task name alone, as this can lead to significant performance differences. These retrieval tasks are highly prompt-sensitive for instruction-untuned models in zero-shot settings.
 
 
 ## 🌟 Why Gated DeltaNet?
