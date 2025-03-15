@@ -2,7 +2,7 @@
 
 ![nvidia-deltanet-badge](https://github.com/user-attachments/assets/35b89293-29e9-4560-864d-45f702a5ddf7)
 
-Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule (ICLR '25)**](https://arxiv.org/abs/2412.06464v1). 
+Official PyTorch implementation of [**Gated Delta Networks: Improving Mamba2 with Delta Rule (ICLR '25)**](https://arxiv.org/abs/2412.06464). 
 
 [![Star on GitHub](https://img.shields.io/github/stars/NVlabs/GatedDeltaNet.svg?style=social)](https://github.com/NVlabs/GatedDeltaNet/stargazers)
 
