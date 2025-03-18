@@ -27,9 +27,9 @@ For additional functionalities, such as varlen training and inference support, s
 </svg>
 
 ## 📢 Latest Updates
-- `02/23/2024`: 🔥🔥 Check out the optimized [Gated DeltaNet FLA kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/) with significantly faster speed.
-- `02/22/2024`: 🔥 Gated DeltaNet is available in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
-- `01/22/2024`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
+- `02/23/2025`: 🔥🔥 Check out the optimized [Gated DeltaNet FLA kernels](https://github.com/NVlabs/GatedDeltaNet/blob/main/lit_gpt/gated_delta_rule_ops/fla_version/) with significantly faster speed.
+- `02/22/2025`: 🔥 Gated DeltaNet is available in [FLA](https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/gated_delta_rule) !
+- `01/22/2025`: 🔥🔥 Gated DeltaNet has been accepted to ICLR '25.
 - `12/09/2024`: **Code Release**: Train your own Gated DeltaNet on Slimpajama dataset
 - Watch this space for more exciting updates!
 
